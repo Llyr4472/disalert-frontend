@@ -1,0 +1,17 @@
+.left-sidebar {
+  top: 0%;
+  position: absolute;
+  height:97vh;
+  border-radius: 50px;
+  margin: 3%;
+  background-color: #211543;
+  width: auto;
+  z-index: 2;
+}
+
+.search-bar {
+  display: flex;
+  border-radius: 50px;
+  margin-top: 10%;
+}
+
