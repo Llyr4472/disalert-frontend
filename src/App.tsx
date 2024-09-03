@@ -2,7 +2,13 @@ import MyGlobe from "./components/Globe";
 import Navbar from "./components/Navbar";
 import Alerts from "./components/Alerts";
 import Modal from "./components/Modal";
-
+import Login from "./components/Login";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  } from "react-router-dom";
+import Signup from "./components/Signup";
 
 interface Alert {
   type: string;
@@ -11,6 +17,7 @@ interface Alert {
 }
 
 const App = () => {
+
   const handleSearch = (searchTerm: string) => {
     console.log("Search:", searchTerm);
   };
@@ -35,20 +42,30 @@ const App = () => {
   ];
 
   return (
-    <>
-      <div id="app-root">
-        <MyGlobe />
-        <Navbar
-          onSearch={handleSearch}
-          onFilter={handleFilter}
-          onAlertClick={handleAlertClick}
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/home" element={
+            <>
+              <div id="app-root">
+                <MyGlobe />
+                <Navbar
+                  onSearch={handleSearch}
+                  onFilter={handleFilter}
+                  onAlertClick={handleAlertClick}
+                />
+                <Alerts recentAlerts={recentAlerts} />
+              </div>
+              <div id="modal-root">
+                <Modal />
+              </div>
+            </>
+          }
         />
-        <Alerts recentAlerts={recentAlerts} />
-      </div>
-      <div id="modal-root">
-        <Modal />
-      </div>
-    </>
+      </Routes>
+    </Router>
   );
 };
+
 export default App;
