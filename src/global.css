@@ -1,3 +1,69 @@
 body {
   margin: 0;
 }
+
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.searchbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 51, 0.7);  
+}
+
+  .modern-modal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(77, 77, 255, 0.1);
+    background-color: rgba(0, 0, 51, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+  }
+
+.modern-modal .modal-header {
+  border-bottom: none;
+  padding: 25px 25px 0;
+}
+
+.modern-modal .modal-body {
+  padding: 25px;
+}
+
+.modern-modal .form-control,
+.modern-modal .form-select {
+  border-radius: 10px;
+  border: 1px solid #4d4dff;
+  padding: 12px;
+  background-color: #000033;
+  color: #ffffff;
+}
+
+.modern-modal .form-control::placeholder,
+.modern-modal .form-select::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.modern-modal .btn-primary {
+  background-color: #4d4dff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #000033;
+}
+
+.modern-modal .btn-primary:hover {
+  background-color: #3333cc;
+  transform: translateY(-2px);
+}
+
+.modern-modal .form-select option:first-child {
+  color: rgba(255, 255, 255, 0.5);
+}
