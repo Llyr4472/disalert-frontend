@@ -1,5 +1,4 @@
-import "./global.css";
-import MyGlobe from "./components/Globe/Globe";
+import MyGlobe from "./components/Globe";
 import Navbar from "./components/Navbar";
 import Alerts from "./components/Alerts";
 import Modal from "./components/Modal";
@@ -27,19 +26,29 @@ const App = () => {
   const recentAlerts: Alert[] = [
     { type: "Earthquake", location: "Nepal", time: "2024-09-02" },
     { type: "Flood", location: "Bangladesh", time: "2024-09-01" },
+    { type: "Wildfire", location: "California, USA", time: "2024-08-30" },
+    { type: "Hurricane", location: "Florida, USA", time: "2024-08-28" },
+    { type: "Tsunami", location: "Japan", time: "2024-08-25" },
+    { type: "Volcanic Eruption", location: "Indonesia", time: "2024-08-22" },
+    { type: "Landslide", location: "Peru", time: "2024-08-20" },
+    { type: "Drought", location: "Ethiopia", time: "2024-08-15" },
   ];
 
   return (
-    <div>
-      <MyGlobe />
-      <Navbar
-        onSearch={handleSearch}
-        onFilter={handleFilter}
-        onAlertClick={handleAlertClick}
-      />
-      <Alerts recentAlerts={recentAlerts} />
-      <Modal />
-    </div>
+    <>
+      <div id="app-root">
+        <MyGlobe />
+        <Navbar
+          onSearch={handleSearch}
+          onFilter={handleFilter}
+          onAlertClick={handleAlertClick}
+        />
+        <Alerts recentAlerts={recentAlerts} />
+      </div>
+      <div id="modal-root">
+        <Modal />
+      </div>
+    </>
   );
 };
 export default App;
