@@ -1,3 +1,3 @@
 Preview
 
-![Preview](src/assets/preview.png)
+![Preview](src/assets/preview.gif)
