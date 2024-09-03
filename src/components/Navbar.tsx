@@ -1,4 +1,5 @@
-import './../global.css'  
+import './../global.css'
+import { Link } from "react-router-dom";
 
 interface Alert {
     type: string;
@@ -49,13 +50,13 @@ interface Alert {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
               <li className="nav-item hover-effect">
-                <a
+                <Link
                   className="nav-link active text-light"
                   aria-current="page"
-                  href="#"
+                  to="/home"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item  hover-effect">
                 <a className="nav-link text-light" href="#">
@@ -139,7 +140,7 @@ interface Alert {
             </ul>
             <form className="d-flex" role="search">
               <input
-              className="form-control me-2 bg-light text-dark border-0 rounded-pill hover-effect search-bar"
+                className="form-control me-2 bg-light text-dark border-0 rounded-pill hover-effect search-bar"
                 type="search"
                 placeholder="Search alerts..."
                 aria-label="Search"
@@ -148,7 +149,14 @@ interface Alert {
               <button
                 className="btn rounded-pill hover-effect"
                 type="submit"
-                onClick={() => onSearch("")}
+                onClick={() => {
+                  const searchInput = document.querySelector(
+                    'input[type="search"]'
+                  );
+                  if (searchInput instanceof HTMLInputElement) {
+                    onSearch(searchInput.value);
+                  }
+                }}
                 style={{
                   backgroundColor: "rgba(77, 77, 255, 0.5)",
                   color: "#4d4dff",
@@ -159,6 +167,18 @@ interface Alert {
                 Search
               </button>
             </form>
+            <Link to="/login">
+              <button
+                className="btn btn-outline-light rounded-pill hover-effect ms-2"
+                style={{
+                  fontFamily: "monospace",
+                  transition: "transform 0.1s",
+                }}
+                onClick={() => {}}
+              >
+                Login
+              </button>
+          </Link>
           </div>
         </div>
       </nav>
