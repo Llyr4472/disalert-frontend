@@ -1,5 +1,3 @@
-  import { useEffect } from 'react'
-
   const Modal = () => {
     const handleSubmit = (e: { preventDefault: () => void; }) => {
       e.preventDefault();
