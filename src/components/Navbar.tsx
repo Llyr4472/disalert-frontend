@@ -16,8 +16,6 @@ interface LeftSidebarProps {
 
 const Navbar: React.FC<LeftSidebarProps> = ({
   onSearch,
-  onFilter,
-  onAlertClick,
 }) => {
   return (
     <nav

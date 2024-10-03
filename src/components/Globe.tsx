@@ -1,12 +1,11 @@
 import { useRef, useEffect, useState } from "react";
 import Globe, { GlobeMethods } from "react-globe.gl";
 import { Alert } from "../types";
-import * as THREE from "three";
-import { red } from "@mui/material/colors";
+// import * as THREE from "three";
 
-const CLOUDS_IMG_URL = "/assets/clouds.png";
-const CLOUDS_ALT = 0.004;
-const CLOUDS_ROTATION_SPEED = -0.006; // deg/frame
+// const CLOUDS_IMG_URL = "/assets/clouds.png";
+// const CLOUDS_ALT = 0.004;
+// const CLOUDS_ROTATION_SPEED = -0.006; // deg/frame
 
 interface MyGlobeProps {
   recentAlerts: Alert[];
