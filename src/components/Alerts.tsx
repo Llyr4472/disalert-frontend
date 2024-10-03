@@ -1,10 +1,5 @@
 import { useState } from "react";
-
-interface Alert {
-  type: string;
-  location: string;
-  time: string;
-}
+import { Alert } from "../types";
 
 interface AlertsProps {
   recentAlerts: Alert[];
