@@ -6,7 +6,6 @@ import Login from "./components/Login";
 
 import { Alert } from "./types";
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Navigate,
@@ -40,30 +39,28 @@ const App = () => {
     ];
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/home" element={
-            <>
-              <div id="app-root">
-                <MyGlobe recentAlerts={recentAlerts} />
-                <Navbar
-                  onSearch={handleSearch}
-                  onFilter={handleFilter}
-                  onAlertClick={handleAlertClick}
-                />
-                <Alerts recentAlerts={recentAlerts} />
-              </div>
-              <div id="modal-root">
-                <Modal />
-              </div>
-            </>
-          }
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/home" element={
+          <>
+            <div id="app-root">
+              <MyGlobe recentAlerts={recentAlerts} />
+              <Navbar
+                onSearch={handleSearch}
+                onFilter={handleFilter}
+                onAlertClick={handleAlertClick}
+              />
+              <Alerts recentAlerts={recentAlerts} />
+            </div>
+            <div id="modal-root">
+              <Modal />
+            </div>
+          </>
+        }
+      />
+    </Routes>
   );
 };
 
