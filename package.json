@@ -2,7 +2,7 @@
   "name": "disalert-frontend",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://llyr4472.github.io/frontend/home",
+  "homepage": "https://llyr4472.github.io/frontend",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
